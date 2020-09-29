@@ -29,30 +29,28 @@ using namespace std;
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        if(matrix.empty() || matrix.front().empty()){
+        if(matrix.empty() || matrix.front().empty())
             return false;
-        }
-        int n = matrix.size();
-        int m = matrix.front().size();
-        for(int i = 0; i<n; i++){
-            if(matrix[i].front() <= target 
-                && matrix[i].back() >= target){
-                int left = 0, right = m;
-                int mid = left + (right - left)/2;
-                while(left < right){
-                    if(matrix[i][mid] == target){
-                        return true;
-                    }
-                    else if(matrix[i][mid] > target){
-                        right = mid;
-                    }
-                    else{
-                        left = mid + 1;
-                    }
-                    mid = left + (right - left)/2;
-                }
+        
+        int currRow = 0 ;
+        int currCol = matrix[0].size() -1;
+        
+        
+        while(currRow< matrix.size() &&  currCol >=0)
+        {
+            if(matrix[currRow][currCol]==target)
+                return true;
+            
+            if(matrix[currRow][currCol]>target)
+            {
+                currCol--;
+            }
+            else
+            {
+                currRow++;
             }
         }
+        
         return false;
     }
 };
