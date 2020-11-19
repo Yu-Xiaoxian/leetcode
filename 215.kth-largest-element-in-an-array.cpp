@@ -5,6 +5,7 @@
  */
 
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -12,19 +13,34 @@ using namespace std;
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
-        int begin = 0;
-        int end = nums.size() - 1;
-        while(begin < end){
-            int p = partition(nums, begin, end);
-            if(p == k-1){
-                break;
-            } else if(p < k-1){
-                begin = p+1;
-            } else if(p > k-1){
-                end = p-1;
-            }
+        /***************************/
+        // priority_queue solution
+        std::priority_queue<int> pq;
+        for(auto n : nums){
+            pq.push(n);
         }
-        return nums[k-1];
+        while(k > 1){
+            pq.pop();
+            k--;
+        }
+        return pq.top();
+
+
+        /********************/
+        // Quick Sort solution
+        // int begin = 0;
+        // int end = nums.size() - 1;
+        // while(begin < end){
+        //     int p = partition(nums, begin, end);
+        //     if(p == k-1){
+        //         break;
+        //     } else if(p < k-1){
+        //         begin = p+1;
+        //     } else if(p > k-1){
+        //         end = p-1;
+        //     }
+        // }
+        // return nums[k-1];
     }
 
     int partition(vector<int>& nums, int begin, int end){
