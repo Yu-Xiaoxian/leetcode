@@ -27,7 +27,7 @@ public:
     void Remove(Node* node){
         node->prev->next = node->next;
         node->next->prev = node->prev;
-        delete node;
+        // delete node;
         size_--;
     }
 
@@ -46,7 +46,7 @@ public:
             dummy_->next = curr->next;
             curr->next->prev = dummy_;
             int key = curr->key;
-            delete curr;
+            // delete curr;
             size_--;
             return key;
         }
