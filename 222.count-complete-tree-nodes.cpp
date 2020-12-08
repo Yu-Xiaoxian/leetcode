@@ -5,6 +5,8 @@
  */
 
 #include <iostream>
+#include <queue>
+#include <cmath>
 
 using namespace std;
 
@@ -32,18 +34,33 @@ struct TreeNode {
 class Solution {
 public:
     int countNodes(TreeNode* root) {
-        int result = 0;       
-        traverse(root, &result);
+        if(root == nullptr){
+            return 0;
+        }
+        int result = 0;
+        int height = depth(root);
+        int right_height = depth(root->right);
+        if(right_height < height - 1){
+            result += countNodes(root->left);
+            result += pow(2, right_height + 1) - 1;
+            result++;
+        }
+        else{
+            result += pow(2, right_height + 1) - 1;
+            result += countNodes(root->right);
+            result++;
+        }
         return result;
     }
 
-    void traverse(TreeNode* root, int* cnt){
-        if(root == nullptr){
-            return;
+    int depth(TreeNode* root){
+        TreeNode* curr = root;
+        int depth = -1;
+        while(curr != nullptr){
+            curr = curr->left;
+            depth++;
         }
-        traverse(root->left, cnt);
-        (*cnt)++;
-        traverse(root->right, cnt);
+        return depth;
     }
 };
 // @lc code=end
