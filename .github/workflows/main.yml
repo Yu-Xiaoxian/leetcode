@@ -12,5 +12,5 @@ jobs:
     runs-on: ubuntu-latest    
     steps:
     - uses: actions/checkout@master
-    - run: cp scripts/entrypoint.sh actions/kinetic/entrypoint.sh
+    - run: cp scripts/entrypoint.sh actions/ubuntu/entrypoint.sh
     - uses: ./actions/ubuntu
