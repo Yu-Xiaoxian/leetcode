@@ -1,6 +1,6 @@
 # LeetCoding Record 
 
-[![main_workflow](https://github.com/Yu-Xiaoxian/leetcode/workflows/main_workflow/badge.svg)](https://github.com/Yu-Xiaoxian/leetcode)
+[![main_workflow](https://github.com/Yu-Xiaoxian/leetcode/workflows/main_workflow/badge.svg)](https://github.com/Yu-Xiaoxian/leetcode/actions)
 
 Follow me at [LeetCode](https://leetcode.com/yu-xiaoxian)
 
