@@ -16,9 +16,9 @@
 
 source /etc/profile
 
-sudo apt-get update
-sudo apt-get install -y \
-    g++
+apt-get update
+apt-get install -y \
+    g++ \
     ninja-build
 
 mkdir build
