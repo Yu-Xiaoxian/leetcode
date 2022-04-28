@@ -11,11 +11,11 @@ jobs:
     name: build_in_ubuntu_bionic
     runs-on: ubuntu-latest    
     steps:
-    - uses: actions/checkout@master
-    - run: cp scripts/entrypoint.sh actions/ubuntu/entrypoint.sh
-    - uses: ./actions/ubuntu
-    - run: |
-      mkdir build
-      cd build
-      cmake .. -G Ninja -DCXX11=ON
-      ninja
+      - uses: actions/checkout@master
+      - run: cp scripts/entrypoint.sh actions/ubuntu/entrypoint.sh
+      - uses: ./actions/ubuntu
+      - run: |
+        mkdir build
+        cd build
+        cmake .. -G Ninja -DCXX11=ON
+        ninja
