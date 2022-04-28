@@ -1,0 +1,16 @@
+name: main_workflow
+on: 
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build_ubuntu_bionic:
+    name: build_in_ubuntu_bionic
+    runs-on: ubuntu-latest    
+    steps:
+    - uses: actions/checkout@master
+    - run: cp scripts/entrypoint.sh actions/kinetic/entrypoint.sh
+    - uses: ./actions/ubuntu
