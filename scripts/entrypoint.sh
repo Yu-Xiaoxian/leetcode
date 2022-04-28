@@ -16,3 +16,8 @@
 
 sudo apt install cmake
 sudo apt install ninja
+
+mkdir build
+cd build
+cmake .. -G Ninja -DCXX11=ON
+ninja

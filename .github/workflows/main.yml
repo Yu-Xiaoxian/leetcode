@@ -14,8 +14,3 @@ jobs:
       - uses: actions/checkout@master
       - run: cp scripts/entrypoint.sh actions/ubuntu/entrypoint.sh
       - uses: ./actions/ubuntu
-      - run: |
-        mkdir build
-        cd build
-        cmake .. -G Ninja -DCXX11=ON
-        ninja
