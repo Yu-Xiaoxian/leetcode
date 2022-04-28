@@ -14,8 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-sudo apt install cmake
-sudo apt install ninja
+source /etc/profile
+
+sudo apt-get update
+sudo apt-get install -y \
+    g++
+    ninja-build
 
 mkdir build
 cd build
