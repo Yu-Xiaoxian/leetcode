@@ -11,7 +11,8 @@ Follow me at [LeetCode](https://leetcode.com/yu-xiaoxian)
 ######## Ubuntu/Debian ############
 sudo apt-get update
 sudo apt-get install -y \
-    g++
+    g++ \
+    cmake \
     ninja-build
 ```
 
@@ -33,4 +34,4 @@ For Example
 - [ ] Use GTest for testing instead of main()
 - [ ] Load test-case from txt file
 - [ ] Implement common container such as TreeNode
-- [ ] Add CMake-make workflow for CI/CD
+- [x] Add CMake-make workflow for CI/CD
