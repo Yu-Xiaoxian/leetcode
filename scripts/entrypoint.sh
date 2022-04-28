@@ -19,6 +19,7 @@ source /etc/profile
 apt-get update
 apt-get install -y \
     g++ \
+    cmake \
     ninja-build
 
 mkdir build
